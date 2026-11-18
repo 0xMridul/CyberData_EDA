@@ -1,0 +1,41 @@
+{
+  "ddos_summary": {
+    "packets": 3436938,
+    "start_time": 82292.886800888,
+    "end_time": 82556.682784892,
+    "duration_seconds": 263.8,
+    "rate_pps": 13028.8
+  },
+  "sample_ftp_attempts": [
+    "USER reijgie",
+    "PASS thiiiis",
+    "USER jrgeqjg",
+    "PASS ueohajdnjbd",
+    "USER devfive",
+    "USER dev",
+    "PASS jjuregekqhnj",
+    "PASS pass123",
+    "USER test12",
+    "PASS deve",
+    "USER test",
+    "PASS test",
+    "USER jeruvjvjer",
+    "USER setone",
+    "PASS password",
+    "USER txt",
+    "USER devnine",
+    "PASS test124",
+    "PASS lerrnegvjaeu",
+    "USER setteo"
+  ],
+  "sample_ssh_probes": [
+    "Client: Protocol (SSH-1.5-NmapNSE_1.0)",
+    "Client: Protocol (SSH-1.5-Nmap-SSH1-Hostkey)",
+    "Client: Protocol (SSH-2.0-Nmap-SSH2-Hostkey)",
+    "Client: Protocol (SSH-2.0-Nmap-SSH2-Hostkey)",
+    "Client: Protocol (SSH-2.0-Nmap-SSH2-Hostkey)",
+    "Client: Protocol (SSH-2.0-Nmap-SSH2-Hostkey)",
+    "Client: Protocol (SSH-2.0-Nmap-SSH2-Hostkey)",
+    "Client: Protocol (SSH-2.0-Nmap-SSH2-Hostkey)"
+  ]
+}

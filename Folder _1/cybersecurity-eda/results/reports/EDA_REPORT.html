@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exploratory Data Analysis: Cyber Attack Evaluation Dataset for Deep Packet Inspection and Analysis</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #24292e;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 30px;
+  }
+  h1, h2, h3, h4 {
+    color: #0366d6;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.3em;
+  }
+  h1 { font-size: 2em; border-bottom: 2px solid #0366d6; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 0.9em;
+  }
+  th, td {
+    border: 1px solid #dfe2e5;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th {
+    background-color: #f6f8fa;
+    font-weight: 600;
+  }
+  tr:nth-child(2n) {
+    background-color: #fbfcfd;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  code {
+    background-color: #f6f8fa;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 85%;
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  }
+  pre code {
+    display: block;
+    padding: 12px;
+    overflow-x: auto;
+  }
+  blockquote {
+    border-left: 4px solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+<h1>Comprehensive Exploratory Data Analysis &amp; Forensic Report: Cyber Attack Evaluation Dataset for Deep Packet Inspection and Analysis</h1>
+<p><strong>Document Status:</strong> Final Verified Research Report<br />
+<strong>Publication Date:</strong> November 15, 2026<br />
+<strong>Investigator:</strong> Senior Cybersecurity Data Scientist, Network Forensics Analyst &amp; Machine Learning Researcher<br />
+<strong>Target Research Topic:</strong> Adaptive Cyberattack Detection Using Machine Learning and Concept Drift Detection  </p>
+<hr />
+<h2>1. Title and Dataset Information</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metadata Field</th>
+<th style="text-align: left;">Authoritative Dataset Attribute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Dataset Title</strong></td>
+<td style="text-align: left;">Cyber Attack Evaluation Dataset for Deep Packet Inspection and Analysis</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Authoritative URL</strong></td>
+<td style="text-align: left;"><a href="https://data.mendeley.com/datasets/3szjvt3w78/1">https://data.mendeley.com/datasets/3szjvt3w78/1</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Digital Object Identifier (DOI)</strong></td>
+<td style="text-align: left;"><a href="https://doi.org/10.17632/3szjvt3w78.1">10.17632/3szjvt3w78.1</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Publisher</strong></td>
+<td style="text-align: left;">Mendeley Data (Elsevier)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dataset Version</strong></td>
+<td style="text-align: left;">Version 1 (Released October 18, 2022)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Authors</strong></td>
+<td style="text-align: left;">Shishir Kumar Shandilya, Chirag Ganguli, Ivan Izonin, Atulya Nagar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Affiliations</strong></td>
+<td style="text-align: left;">VIT Bhopal University (India), Lviv Polytechnic National University (Ukraine), Liverpool Hope University (UK)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>License</strong></td>
+<td style="text-align: left;">Creative Commons Attribution 4.0 International (CC BY 4.0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Official Archive File</strong></td>
+<td style="text-align: left;"><code>Cap_1_10VM_1Apache.zip</code> (630,038,438 bytes / 600.85 MB)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Verified SHA-256 Hash</strong></td>
+<td style="text-align: left;"><code>ed0179b2be52d2b1b82ae211aed2ac44af391edf00d477da69f8f1f4cb3ecaa9</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Access &amp; Verification Date</strong></td>
+<td style="text-align: left;">November 15, 2026</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. Executive Summary</h2>
+<p>This investigation delivers a research-grade Exploratory Data Analysis (EDA) and network forensic audit of the <em>Cyber Attack Evaluation Dataset for Deep Packet Inspection and Analysis</em>. The dataset captures network traffic across an experimental multi-VLAN Docker testbed consisting of 10 virtual machines (<code>dev</code> through <code>devnine</code> on VLAN1) and a dedicated Apache web server (<code>server</code> on VLAN2), interconnected via software routers over a 23.53-hour window ($84,714.90$ seconds).</p>
+<h3>Key Empirical Findings:</h3>
+<ol>
+<li><strong>Physical Frame Volume &amp; Concordance:</strong> The dataset contains exactly <strong>$3,962,784$ packets</strong> in the raw PCAPNG capture (<code>L1_Cap_10PC_1S.pcapng</code>, 946.82 MB), mapping with <strong>100.00% concordance</strong> to the companion complete CSV export (<code>L1_Cap_202209051617.csv</code>, 539.02 MB) and MySQL dump (<code>L1_Cap_202209051620.sql</code>, 618.03 MB).</li>
+<li><strong>Extreme Volumetric Asymmetry (The DDoS Ingestion Storm):</strong> Out of $3,962,784$ total packets, <strong>$3,436,938$ packets (86.73%)</strong> constitute a single, catastrophic TCP SYN flood Distributed Denial of Service (DDoS) attack targeting the Apache web server (<code>172.17.0.2:80</code>). This flood was compressed into a narrow <strong>263.80-second window (4.40 minutes)</strong> near the end of the 23.5-hour capture ($t = 82,292.89\text{s}$ to $82,556.68\text{s}$), achieving a sustained mean attack rate of <strong>$13,028.8\text{ packets/second}$</strong> with micro-burst peaks exceeding <strong>$71,343.8\text{ PPS}$</strong> ($94.71\text{ Mbps}$).</li>
+<li><strong>Massive IP Spoofing Architecture:</strong> The DDoS storm generated <strong>$3,432,651$ distinct spoofed IPv4 source addresses</strong> directed at <code>172.17.0.2</code>, explaining why the author-provided label column <code>Source_Known</code> is <strong>87.98% zero</strong>.</li>
+<li><strong>Comprehensive Reconnaissance (Full 65,535-Port Sweeps):</strong> Preceding the DDoS attack, between $t = 75,210\text{s}$ and $75,618\text{s}$ (Clusters 14, 15, and 17), three exhaustive Nmap sweeps (<code>nmap -p-</code>) scanned all <strong>$65,535$ TCP ports</strong> across targets <code>172.18.0.3</code>, <code>172.18.0.6</code>, and <code>172.18.0.2</code>, accounting for <strong>$414,321$ packets</strong> characterized by rapid SYN queries and victim <code>RST,ACK</code> responses.</li>
+<li><strong>Credential Hammering (Brute-Force Exploitation):</strong> Forensics identified <strong>$1,786$ iterative authentication attempts</strong> targeting the vsftpd FTP service on <code>172.18.0.6:21</code> (e.g., <code>USER dev</code>, <code>USER developer</code>, <code>PASS password123</code>), resulting in repeated <code>530 Login incorrect</code> rejection codes, alongside explicit Nmap Scripting Engine (NSE) fingerprint probes against OpenSSH on port 22 (<code>SSH-1.5-NmapNSE_1.0</code>).</li>
+<li><strong>Data Quality &amp; Forensic Artifacts:</strong> The dataset exhibits high structural integrity (zero missing values in <code>No.</code>, <code>Time</code>, <code>Source</code>, <code>Destination</code>, <code>Protocol</code>, and <code>Length</code>). The only missingness occurs in <code>Time to Live</code> (<strong>789 entries, 0.0199%</strong>), which this audit rigorously proves to be Layer 2 ARP frames lacking an IPv4 header. A unique anomaly where TTL equals $64,127$ across two frames was forensically traced to Wireshark CSV unescaped concatenation of nested outer ($TTL=64$) and inner ($TTL=127$) IP headers within ICMP Port Unreachable packets.</li>
+<li><strong>Labeling Reality Check:</strong> The dataset documentation describes <code>L1_Cap_202209051617.csv</code> as "the labeled dataset." However, the two label columns (<code>Source_Known</code> and <code>Destination_Known</code>) strictly denote whether an IP belongs to the local 11-machine subnet ($1=\text{True}, 0=\text{False}$). <strong>There is no explicit per-packet ground-truth attack class column</strong> (e.g., <code>Label = 'DDoS'</code>). Downstream supervised classification requires heuristic rule-based or behavioral ground-truth generation.</li>
+</ol>
+<hr />
+<h2>3. Dataset Architecture &amp; Provenance</h2>
+<h3>3.1 Network Topology and Testbed Architecture</h3>
+<p>As documented in the official dataset manual (<code>Dataset_J4_How_to_Install.pdf</code>) and validated through packet forensics, the testbed operates across two virtual local area networks (VLANs) inside a Docker Bridge infrastructure:</p>
+<pre><code class="language-mermaid">graph TD
+    subgraph VLAN1 [&quot;VLAN 1: Docker Bridge Subnet (172.18.0.0/24)&quot;]
+        R1[&quot;Router 1&lt;br&gt;172.18.0.1&quot;]
+        VM2[&quot;dev&lt;br&gt;172.18.0.2&quot;]
+        VM3[&quot;devone&lt;br&gt;172.18.0.3&quot;]
+        VM4[&quot;devtwo&lt;br&gt;172.18.0.4&quot;]
+        VM5[&quot;devthree&lt;br&gt;172.18.0.5&quot;]
+        VM6[&quot;devfour&lt;br&gt;172.18.0.6&lt;br&gt;(vsftpd FTP, SSH)&quot;]
+        VM7[&quot;devfive&lt;br&gt;172.18.0.7&quot;]
+        VM8[&quot;devsix&lt;br&gt;172.18.0.8&quot;]
+        VM9[&quot;devseven&lt;br&gt;172.18.0.9&quot;]
+        VM10[&quot;deveight&lt;br&gt;172.18.0.10&quot;]
+        VM11[&quot;devnine&lt;br&gt;172.18.0.11&quot;]
+
+        R1 --- VM2
+        R1 --- VM3
+        R1 --- VM4
+        R1 --- VM5
+        R1 --- VM6
+        R1 --- VM7
+        R1 --- VM8
+        R1 --- VM9
+        R1 --- VM10
+        R1 --- VM11
+    end
+
+    subgraph VLAN2 [&quot;VLAN 2: Isolated Server Subnet (172.17.0.0/24)&quot;]
+        R2[&quot;Router 2&lt;br&gt;172.17.0.1&quot;]
+        SRV[&quot;server (Apache Web Server)&lt;br&gt;172.17.0.2:80&quot;]
+        R2 --- SRV
+    end
+
+    subgraph WAN [&quot;External Internet Mirrors (WAN)&quot;]
+        UB1[&quot;ports.ubuntu.com&lt;br&gt;185.125.190.36&quot;]
+        UB2[&quot;ports.ubuntu.com&lt;br&gt;185.125.190.39&quot;]
+        DNS1[&quot;Local DNS Resolver&lt;br&gt;172.16.49.2&quot;]
+    end
+
+    R1 &lt;==&gt;|&quot;Cross-VLAN Routing&quot;| R2
+    R1 -.-&gt;|&quot;Apt Package Downloads&quot;| UB1
+    R1 -.-&gt;|&quot;Apt Package Downloads&quot;| UB2
+    R1 -.-&gt;|&quot;DNS Resolution&quot;| DNS1
+</code></pre>
+<h3>3.2 Inventory of Downloaded Artifacts</h3>
+<p>Unpacking <code>Cap_1_10VM_1Apache.zip</code> yielded 7 distinct files totaling 3.02 GB uncompressed:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File Name</th>
+<th style="text-align: left;">Size (Bytes)</th>
+<th style="text-align: left;">Size (MB)</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Analytical Purpose &amp; Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>L1_Cap_10PC_1S.pcapng</code></td>
+<td style="text-align: left;">$992,811,744$</td>
+<td style="text-align: left;">$946.82$</td>
+<td style="text-align: left;">PCAPNG</td>
+<td style="text-align: left;">Raw packet capture ($3,962,784$ frames) containing full payload bytes, MAC headers, TCP flags, sequence numbers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>L1_Cap_202209051617.csv</code></td>
+<td style="text-align: left;">$565,206,982$</td>
+<td style="text-align: left;">$539.02$</td>
+<td style="text-align: left;">CSV</td>
+<td style="text-align: left;">Author-labeled dataset ($3,962,784$ rows) with 10 fields including <code>Source_Known</code> and <code>Destination_Known</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>L1_Cap_10PC_1S_dissec_complete.csv</code></td>
+<td style="text-align: left;">$589,440,683$</td>
+<td style="text-align: left;">$562.14$</td>
+<td style="text-align: left;">CSV</td>
+<td style="text-align: left;">Full Wireshark export ($3,962,784$ rows) with 8 standard packet fields.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>L1_Cap_202209051620.sql</code></td>
+<td style="text-align: left;">$648,049,142$</td>
+<td style="text-align: left;">$618.03$</td>
+<td style="text-align: left;">SQL</td>
+<td style="text-align: left;">MySQL insert stream inserting all $3,962,784$ rows into table <code>pcdataset.L1_Cap</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>L1_Cap_10PC_1S_dissec.csv</code></td>
+<td style="text-align: left;">$150,476,850$</td>
+<td style="text-align: left;">$143.51$</td>
+<td style="text-align: left;">CSV</td>
+<td style="text-align: left;">Truncated dataset containing the first $1,048,575$ rows (Excel row-limit boundary).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>L1_Cap_10PC_1S_dissec.xlsx</code></td>
+<td style="text-align: left;">$70,185,192$</td>
+<td style="text-align: left;">$66.93$</td>
+<td style="text-align: left;">XLSX</td>
+<td style="text-align: left;">Microsoft Excel format containing the first $1,048,576$ rows.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Dataset_J4_How_to_Install.pdf</code></td>
+<td style="text-align: left;">$492,903$</td>
+<td style="text-align: left;">$0.47$</td>
+<td style="text-align: left;">PDF</td>
+<td style="text-align: left;">7-page system guide documenting host IP table, attacks, and MySQL schema.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Data Quality Audit &amp; Forensic Verification</h2>
+<p>The data quality assessment evaluated all $3,962,784$ records across 11 audit dimensions. The findings are summarized in Table 1.</p>
+<h3>Table 1: Comprehensive Data Quality Audit Report (<code>results/tables/data_quality_report.csv</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature Name</th>
+<th style="text-align: left;">Storage Type</th>
+<th style="text-align: left;">Missing (Count)</th>
+<th style="text-align: left;">Missing (%)</th>
+<th style="text-align: left;">Infinite Count</th>
+<th style="text-align: left;">Zero Count</th>
+<th style="text-align: left;">Zero (%)</th>
+<th style="text-align: left;">Whitespace Issues</th>
+<th style="text-align: left;">Forensic Domain Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>No.</code></td>
+<td style="text-align: left;"><code>int64</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Perfectly sequential frame numbers ($1$ to $3,962,784$).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Time</code></td>
+<td style="text-align: left;"><code>float64</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Microsecond timestamps relative to capture origin ($0.0\text{s}$ to $84,714.90\text{s}$).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Source</code></td>
+<td style="text-align: left;"><code>str / object</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">$3,432,668$ distinct values (predominantly spoofed IPv4s + 11 VM IPs + MACs).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Destination</code></td>
+<td style="text-align: left;"><code>str / object</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">36 distinct values. Highly concentrated on Apache server ($87.17\%$).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Protocol</code></td>
+<td style="text-align: left;"><code>str / object</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">12 standardized protocol identifiers. No casing or naming inconsistencies.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Length</code></td>
+<td style="text-align: left;"><code>int64</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Frame lengths on wire ($42$ to $64,293$ bytes). Zero negative or zero-length frames.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Time to Live</code></td>
+<td style="text-align: left;"><code>float64</code></td>
+<td style="text-align: left;"><strong>789</strong></td>
+<td style="text-align: left;"><strong>0.0199%</strong></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Layer 3 IP Time-to-Live. Missingness is strictly restricted to ARP frames.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Info</code></td>
+<td style="text-align: left;"><code>str / object</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">383</td>
+<td style="text-align: left;">Wireshark summary string. 383 rows carry trailing whitespace in HTTP headers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Source_Known</code></td>
+<td style="text-align: left;"><code>int64</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><strong>3,486,372</strong></td>
+<td style="text-align: left;"><strong>87.9778%</strong></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Binary flag: $0 = \text{External / Spoofed}$, $1 = \text{Internal Testbed Host}$.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Destination_Known</code></td>
+<td style="text-align: left;"><code>int64</code></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.0000%</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"><strong>43,928</strong></td>
+<td style="text-align: left;"><strong>1.1085%</strong></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Binary flag: $0 = \text{External / Broadcast}$, $1 = \text{Internal Target}$.</td>
+</tr>
+</tbody>
+</table>
+<h3>4.1 In-Depth Investigation of Missing Values in <code>Time to Live</code></h3>
+<p>Cross-referencing the 789 missing values in <code>Time to Live</code> against the <code>Protocol</code> column revealed:
+$$\text{Missing}(TTL) \cap (\text{Protocol} == \text{'ARP'}) = 789 \quad (100.00\%)$$
+Address Resolution Protocol (ARP) operates at OSI Layer 2 (Data Link Layer) and does not encapsulate an IPv4 header. Hence, an IP TTL value does not exist for ARP. This is an expected domain characteristic rather than missing data or sensor failure.</p>
+<h3>4.2 In-Depth Investigation of the TTL = 64,127 Anomaly</h3>
+<p>Two records in the dataset exhibited an out-of-range TTL value:
+- <strong>Frame #13,739</strong> ($t = 2,144.94\text{s}$): Protocol = <code>ICMP</code>, Length = $136$, TTL = $64,127.0$, Info = <code>Destination unreachable (Port unreachable)</code>
+- <strong>Frame #15,071</strong> ($t = 2,151.56\text{s}$): Protocol = <code>ICMP</code>, Length = $136$, TTL = $64,127.0$, Info = <code>Destination unreachable (Port unreachable)</code></p>
+<p><strong>Root Cause Analysis:</strong> In ICMP error messages (Type 3: Destination Unreachable), the packet encapsulates the original IP header of the discarded datagram. The outer ICMP IP header had $TTL = 64$ (Linux kernel default), while the inner encapsulated header had $TTL = 127$ (Windows / external gateway). Wireshark's CSV dissector extracted <code>ip.ttl</code> as a concatenated string <code>"64,127"</code>, which when parsed into an unquoted integer column by automated scripts became <code>64127</code>. This provides documented proof of parser artifacting.</p>
+<hr />
+<h2>5. Descriptive Statistical Profiling</h2>
+<p>Table 2 presents the exact descriptive statistics, quartiles, Interquartile Range (IQR), skewness, and Fisher's excess kurtosis computed across the complete dataset.</p>
+<h3>Table 2: Descriptive Statistical Moments (<code>results/tables/descriptive_statistics.csv</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric / Dimension</th>
+<th style="text-align: left;">Packet Length (Bytes)</th>
+<th style="text-align: left;">Time to Live (TTL)</th>
+<th style="text-align: left;">Relative Time (Seconds)</th>
+<th style="text-align: left;">Inter-Arrival Time (Seconds)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Observation Count ($N$)</strong></td>
+<td style="text-align: left;">$3,962,784$</td>
+<td style="text-align: left;">$3,961,995$</td>
+<td style="text-align: left;">$3,962,784$</td>
+<td style="text-align: left;">$3,962,783$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mean ($\mu$)</strong></td>
+<td style="text-align: left;">$216.54$</td>
+<td style="text-align: left;">$63.93$</td>
+<td style="text-align: left;">$81,065.31$ ($22.52\text{ h}$)</td>
+<td style="text-align: left;">$0.0214$ ($21.4\text{ ms}$)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Standard Deviation ($\sigma$)</strong></td>
+<td style="text-align: left;">$1,139.87$</td>
+<td style="text-align: left;">$46.45$</td>
+<td style="text-align: left;">$6,870.29$</td>
+<td style="text-align: left;">$36.33$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Minimum ($\text{Min}$)</strong></td>
+<td style="text-align: left;">$42.00$</td>
+<td style="text-align: left;">$37.00$</td>
+<td style="text-align: left;">$0.00$</td>
+<td style="text-align: left;">$0.000000$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>First Quartile ($Q_1$, 25%)</strong></td>
+<td style="text-align: left;"><strong>$174.00$</strong></td>
+<td style="text-align: left;"><strong>$64.00$</strong></td>
+<td style="text-align: left;">$82,331.14$</td>
+<td style="text-align: left;"><strong>$0.000000$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Median ($Q_2$, 50%)</strong></td>
+<td style="text-align: left;"><strong>$174.00$</strong></td>
+<td style="text-align: left;"><strong>$64.00$</strong></td>
+<td style="text-align: left;">$82,367.22$</td>
+<td style="text-align: left;"><strong>$0.000000$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Third Quartile ($Q_3$, 75%)</strong></td>
+<td style="text-align: left;"><strong>$174.00$</strong></td>
+<td style="text-align: left;"><strong>$64.00$</strong></td>
+<td style="text-align: left;">$82,506.99$</td>
+<td style="text-align: left;"><strong>$0.000000$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Maximum ($\text{Max}$)</strong></td>
+<td style="text-align: left;">$64,293.00$</td>
+<td style="text-align: left;">$64,127.00$ (Artifact)</td>
+<td style="text-align: left;">$84,714.90$ ($23.53\text{ h}$)</td>
+<td style="text-align: left;">$72,242.77$ ($20.07\text{ h}$)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Interquartile Range ($IQR$)</strong></td>
+<td style="text-align: left;"><strong>$0.00$</strong></td>
+<td style="text-align: left;"><strong>$0.00$</strong></td>
+<td style="text-align: left;">$175.85$</td>
+<td style="text-align: left;"><strong>$0.000000$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Skewness ($\gamma_1$)</strong></td>
+<td style="text-align: left;"><strong>$+46.74$</strong></td>
+<td style="text-align: left;"><strong>$+1,325.69$</strong></td>
+<td style="text-align: left;"><strong>$-10.32$</strong></td>
+<td style="text-align: left;"><strong>$+1,983.98$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Kurtosis ($\gamma_2$, Excess)</strong></td>
+<td style="text-align: left;"><strong>$+2,490.99$</strong></td>
+<td style="text-align: left;"><strong>$+1,826,722.16$</strong></td>
+<td style="text-align: left;"><strong>$+115.53$</strong></td>
+<td style="text-align: left;"><strong>$+3,944,604.95$</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>Statistical Insights:</h3>
+<ul>
+<li><strong>The $IQR = 0$ Phenomenon:</strong> Both <code>Length</code> and <code>Time to Live</code> possess an IQR of exactly $0.00$ because over $86.7\%$ of the entire dataset consists of identical 174-byte DDoS SYN packets originating with Linux default $TTL = 64$.</li>
+<li><strong>Extreme Leptokurtic Skewness:</strong> Packet Length exhibits an extreme positive skewness of $+46.74$ and excess kurtosis of $+2,490.99$, driven by bulk TCP segment transfers during Ubuntu repository package downloads (up to $64,293$ bytes).</li>
+<li><strong>Temporal Inversion:</strong> The <code>Relative Time</code> distribution is strongly left-skewed ($\gamma_1 = -10.32$), reflecting the fact that the experimental capture was predominantly quiet for the first 20 hours, with $87\%$ of all traffic generated in the final 45 minutes.</li>
+</ul>
+<hr />
+<h2>6. Network Traffic &amp; Protocol Composition Analysis</h2>
+<h3>Table 3: Full Protocol Census (<code>results/tables/protocol_distribution.csv</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Protocol Identifier</th>
+<th style="text-align: left;">Packet Frequency</th>
+<th style="text-align: left;">Percentage of Dataset</th>
+<th style="text-align: left;">Functional Layer</th>
+<th style="text-align: left;">Analytical &amp; Forensic Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>TCP</strong></td>
+<td style="text-align: left;">$3,953,715$</td>
+<td style="text-align: left;"><strong>$99.77115\%$</strong></td>
+<td style="text-align: left;">Transport (Layer 4)</td>
+<td style="text-align: left;">Dominant carrier protocol (SYN flood, Nmap sweeps, SSH/FTP sessions).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FTP</strong></td>
+<td style="text-align: left;">$3,792$</td>
+<td style="text-align: left;">$0.09569\%$</td>
+<td style="text-align: left;">Application (Layer 7)</td>
+<td style="text-align: left;">vsftpd authentication hammering and command interaction.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SSHv2</strong></td>
+<td style="text-align: left;">$3,032$</td>
+<td style="text-align: left;">$0.07651\%$</td>
+<td style="text-align: left;">Application (Layer 7)</td>
+<td style="text-align: left;">Encrypted SSH terminal sessions, key exchanges, Nmap NSE audits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HTTP</strong></td>
+<td style="text-align: left;">$1,090$</td>
+<td style="text-align: left;">$0.02751\%$</td>
+<td style="text-align: left;">Application (Layer 7)</td>
+<td style="text-align: left;">Cleartext apt debian package retrieval from Ubuntu ports mirrors.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ARP</strong></td>
+<td style="text-align: left;">$784$</td>
+<td style="text-align: left;">$0.01978\%$</td>
+<td style="text-align: left;">Data Link (Layer 2)</td>
+<td style="text-align: left;">Container MAC address discovery and cache resolution across VLAN1.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ICMP</strong></td>
+<td style="text-align: left;">$200$</td>
+<td style="text-align: left;">$0.00505\%$</td>
+<td style="text-align: left;">Network (Layer 3)</td>
+<td style="text-align: left;">Echo request/reply connectivity tests and Port Unreachable notices.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DNS</strong></td>
+<td style="text-align: left;">$149$</td>
+<td style="text-align: left;">$0.00376\%$</td>
+<td style="text-align: left;">Application (Layer 7)</td>
+<td style="text-align: left;">Hostname resolution (<code>ports.ubuntu.com</code> $\to$ <code>185.125.190.36/39</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FTP-DATA</strong></td>
+<td style="text-align: left;">$6$</td>
+<td style="text-align: left;">$0.00015\%$</td>
+<td style="text-align: left;">Application (Layer 7)</td>
+<td style="text-align: left;">Passive FTP data transfer streams.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UDP</strong></td>
+<td style="text-align: left;">$6$</td>
+<td style="text-align: left;">$0.00015\%$</td>
+<td style="text-align: left;">Transport (Layer 4)</td>
+<td style="text-align: left;">Raw UDP transport datagrams.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ICMPv6</strong></td>
+<td style="text-align: left;">$5$</td>
+<td style="text-align: left;">$0.00013\%$</td>
+<td style="text-align: left;">Network (Layer 3)</td>
+<td style="text-align: left;">IPv6 neighbor solicitations and router discovery.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SSHv1</strong></td>
+<td style="text-align: left;">$4$</td>
+<td style="text-align: left;">$0.00010\%$</td>
+<td style="text-align: left;">Application (Layer 7)</td>
+<td style="text-align: left;">Legacy fallback probes initiated by Nmap scanner.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SSH</strong></td>
+<td style="text-align: left;">$1$</td>
+<td style="text-align: left;">$0.00003\%$</td>
+<td style="text-align: left;">Application (Layer 7)</td>
+<td style="text-align: left;">Protocol handshake negotiation initiation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"><strong>$3,962,784$</strong></td>
+<td style="text-align: left;"><strong>$100.00000\%$</strong></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Complete capture census.</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 1 illustrates the protocol distribution in both log scale and proportional non-TCP share.</p>
+<p><img alt="Figure 1: Protocol Distribution" src="../../results/figures/fig01_protocol_distribution.png" /></p>
+<hr />
+<h2>7. Cyberattack Forensic Investigations</h2>
+<p>The dataset authors documented 12 cyberattack scenarios. This audit conducted an empirical validation to determine which attacks are forensically evidenced in the captured packets versus those that remain unevidenced.</p>
+<h3>Table 4: Forensic Cyberattack Scenario Matrix (<code>results/tables/attack_scenarios_summary.csv</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Attack Scenario</th>
+<th style="text-align: left;">Forensic Evidence Status</th>
+<th style="text-align: left;">Observed Volume</th>
+<th style="text-align: left;">Target Infrastructure</th>
+<th style="text-align: left;">Rate &amp; Temporal Window</th>
+<th style="text-align: left;">Distinct Signatures &amp; Artifacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Distributed Denial of Service (DDoS)</strong></td>
+<td style="text-align: left;"><strong>CONFIRMED</strong></td>
+<td style="text-align: left;"><strong>$3,436,938\text{ pkts}$</strong> ($86.73\%$)</td>
+<td style="text-align: left;"><code>172.17.0.2:80</code> (Apache)</td>
+<td style="text-align: left;">$13,028.8\text{ PPS}$ ($82,292.9\text{s} - 82,556.7\text{s}$)</td>
+<td style="text-align: left;">$3,432,651$ randomized spoofed source IPs; uniform 174-byte TCP SYN datagrams (<code>Len=120</code>, <code>Win=512</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Network Port Scanning (Nmap Sweeps)</strong></td>
+<td style="text-align: left;"><strong>CONFIRMED</strong></td>
+<td style="text-align: left;"><strong>$414,321\text{ pkts}$</strong> ($10.46\%$)</td>
+<td style="text-align: left;">VLAN1 Hosts (<code>.3</code>, <code>.6</code>, <code>.2</code>)</td>
+<td style="text-align: left;">$2,263.2\text{ PPS}$ (Clusters 14, 15, 17)</td>
+<td style="text-align: left;">Full 65,535-port sweep (<code>nmap -p-</code>); rapid SYN burst triggering $199,610$ <code>[RST, ACK]</code> replies.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FTP Credential Brute-Force</strong></td>
+<td style="text-align: left;"><strong>CONFIRMED</strong></td>
+<td style="text-align: left;"><strong>$1,786\text{ pkts}$</strong></td>
+<td style="text-align: left;"><code>172.18.0.6:21</code> (vsftpd)</td>
+<td style="text-align: left;">Sequential ($76,980\text{s} - 79,300\text{s}$)</td>
+<td style="text-align: left;">$75$ distinct credential trials (<code>USER dev</code>, <code>PASS password123</code>); repeated <code>530 Login incorrect</code> codes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SSH Reconnaissance &amp; NSE Probing</strong></td>
+<td style="text-align: left;"><strong>CONFIRMED</strong></td>
+<td style="text-align: left;"><strong>$8\text{ pkts}$</strong></td>
+<td style="text-align: left;">VLAN1 Hosts (Port 22)</td>
+<td style="text-align: left;">Intermittent ($t \approx 75,540\text{s}$)</td>
+<td style="text-align: left;">Explicit Nmap banners: <code>SSH-1.5-NmapNSE_1.0</code>, <code>SSH-1.5-Nmap-SSH1-Hostkey</code>, <code>SSH-2.0-Nmap-SSH2-Hostkey</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Supply-Chain Package Staging</strong></td>
+<td style="text-align: left;"><strong>CONFIRMED</strong></td>
+<td style="text-align: left;"><strong>$361\text{ pkts}$</strong></td>
+<td style="text-align: left;">External Ubuntu Mirrors</td>
+<td style="text-align: left;">Multi-stage ($0\text{s} - 2,714\text{s}$)</td>
+<td style="text-align: left;">Automated <code>apt</code> retrieval of <code>libcap2-bin</code>, <code>iputils-ping</code>, <code>libsqlite3-0</code>, <code>libexpat1</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ARP Discovery &amp; Resolution</strong></td>
+<td style="text-align: left;"><strong>CONFIRMED</strong></td>
+<td style="text-align: left;"><strong>$784\text{ pkts}$</strong></td>
+<td style="text-align: left;">VLAN1 Broadcast</td>
+<td style="text-align: left;">Periodic ($0\text{s} - 84,714\text{s}$)</td>
+<td style="text-align: left;">Layer 2 resolution mapping container MACs (<code>02:42:ac:12:00:xx</code>). No rogue gratuitous ARP poisoning detected.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SQL Injection (SQLi)</strong></td>
+<td style="text-align: left;"><strong>UNSUPPORTED</strong></td>
+<td style="text-align: left;">$0\text{ pkts}$</td>
+<td style="text-align: left;"><code>172.17.0.2:80</code></td>
+<td style="text-align: left;">None observed</td>
+<td style="text-align: left;">Zero HTTP GET/POST queries with SQLi payloads (<code>UNION SELECT</code>, <code>' OR 1=1</code>) observed against server.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Account Takeover / Post-Exploit</strong></td>
+<td style="text-align: left;"><strong>HYPOTHETICAL</strong></td>
+<td style="text-align: left;">Indeterminate</td>
+<td style="text-align: left;">Internal VMs</td>
+<td style="text-align: left;">Post-brute-force window</td>
+<td style="text-align: left;">Successful authentication cannot be confirmed through network packets alone without host OS logs.</td>
+</tr>
+</tbody>
+</table>
+<h3>7.1 Detailed Analysis of the DDoS SYN Flood Storm</h3>
+<p>The DDoS attack is the defining structural event of the dataset:
+- <strong>Target:</strong> Apache web server on VLAN2 (<code>172.17.0.2:80</code>), exploiting cross-VLAN routing through Router1 and Router2.
+- <strong>Micro-Temporal Profile:</strong> The attack commenced abruptly at $t = 82,292.8868\text{s}$ (Packet #509,928) and terminated at $t = 82,556.6828\text{s}$ (Packet #3,946,875).
+- <strong>Attack Geometry:</strong> The attack ingested $3,436,938$ packets in $263.80$ seconds. Packet inter-arrival times during the flood dropped to the microsecond level ($\mu &lt; 76\ \mu\text{s}$), overwhelming the containerized Apache service.
+- <strong>Spoofing Signature:</strong> The attacker utilized an address spoofing engine generating randomized IPv4 headers from globally routed address spaces (e.g., <code>8.58.107.43</code>, <code>155.28.250.171</code>, <code>202.190.179.95</code>), rendering source IP blocking entirely ineffective.</p>
+<p>Figure 4 illustrates the micro-temporal dynamics of the DDoS flood.</p>
+<p><img alt="Figure 4: DDoS Flood Micro-Temporal Profile" src="../../results/figures/fig04_ddos_flood_zoom.png" /></p>
+<h3>7.2 Detailed Analysis of Full-Port Nmap Scanning Sweeps</h3>
+<p>During Clusters 14, 15, and 17, three distinct full-port sweeps were executed:
+1. <strong>Cluster 14 ($t = 75,210.8\text{s} - 75,262.9\text{s}$):</strong> Machine <code>172.18.0.2</code> probed machine <code>172.18.0.3</code> across all <strong>$65,535$ destination ports</strong> in $52.1$ seconds ($1,257\text{ probes/sec}$). Target replied with $65,536$ <code>[RST, ACK]</code> packets.
+2. <strong>Cluster 15 ($t = 75,343.4\text{s} - 75,357.8\text{s}$):</strong> Sweep against machine <code>172.18.0.6</code> across $65,535$ ports in $14.5$ seconds ($4,519\text{ probes/sec}$), identifying open FTP port 21.
+3. <strong>Cluster 17 ($t = 75,518.7\text{s} - 75,618.0\text{s}$):</strong> Sweep identifying open HTTP (port 80), SSH (port 22), and FTP (port 21).</p>
+<p>Figure 6 details the destination port inquiry frequencies.</p>
+<p><img alt="Figure 6: Port Inquiry Distribution" src="../../results/figures/fig06_port_distribution.png" /></p>
+<hr />
+<h2>8. Temporal Traffic Dynamics &amp; Traffic Clusters</h2>
+<p>Segmenting the $84,714.90$-second timeline using an idle-gap threshold of $\Delta t &gt; 60.0\text{s}$ revealed <strong>28 distinct behavioral traffic clusters</strong>.</p>
+<h3>Table 5: Key Operational Traffic Clusters (<code>results/tables/traffic_clusters_breakdown.csv</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cluster ID</th>
+<th style="text-align: left;">Start Time</th>
+<th style="text-align: left;">End Time</th>
+<th style="text-align: left;">Duration (s)</th>
+<th style="text-align: left;">Packet Count</th>
+<th style="text-align: left;">Dominant Protocols</th>
+<th style="text-align: left;">Behavioral &amp; Operational Characterization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>C1 - C12</strong></td>
+<td style="text-align: left;">$0.0\text{s}$ ($0.00\text{h}$)</td>
+<td style="text-align: left;">$2,714.1\text{s}$ ($0.75\text{h}$)</td>
+<td style="text-align: left;">$45.2\text{ min}$</td>
+<td style="text-align: left;">$26,493$</td>
+<td style="text-align: left;">TCP, HTTP, DNS, ARP, ICMP</td>
+<td style="text-align: left;"><strong>Phase 1: Testbed Provisioning &amp; Baseline:</strong> Package downloads from Ubuntu mirrors, DNS lookup, ARP mapping.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Idle Gap</strong></td>
+<td style="text-align: left;">$2,714.1\text{s}$</td>
+<td style="text-align: left;">$74,956.9\text{s}$</td>
+<td style="text-align: left;"><strong>$20.07\text{ hours}$</strong></td>
+<td style="text-align: left;"><strong>$0$</strong></td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;"><strong>Zero-Traffic Idle Gap:</strong> Inactive testbed suspension between experiment stages.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C13 - C19</strong></td>
+<td style="text-align: left;">$74,956.9\text{s}$ ($20.82\text{h}$)</td>
+<td style="text-align: left;">$76,805.8\text{s}$ ($21.33\text{h}$)</td>
+<td style="text-align: left;">$30.8\text{ min}$</td>
+<td style="text-align: left;">$423,399$</td>
+<td style="text-align: left;">TCP, FTP, SSH, HTTP</td>
+<td style="text-align: left;"><strong>Phase 2: Active Reconnaissance:</strong> Full 65k Nmap port sweeps across VLAN1 hosts.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C20 - C23</strong></td>
+<td style="text-align: left;">$76,983.5\text{s}$ ($21.38\text{h}$)</td>
+<td style="text-align: left;">$79,234.4\text{s}$ ($22.01\text{h}$)</td>
+<td style="text-align: left;">$37.5\text{ min}$</td>
+<td style="text-align: left;">$53,412$</td>
+<td style="text-align: left;">TCP, FTP, SSHv2, DNS</td>
+<td style="text-align: left;"><strong>Phase 3: Exploitation &amp; Brute-Force:</strong> vsftpd password dictionary attack, SSH enumeration.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C24 - C25</strong></td>
+<td style="text-align: left;">$82,292.9\text{s}$ ($22.86\text{h}$)</td>
+<td style="text-align: left;">$82,556.7\text{s}$ ($22.93\text{h}$)</td>
+<td style="text-align: left;"><strong>$4.40\text{ min}$</strong></td>
+<td style="text-align: left;"><strong>$3,436,948$</strong></td>
+<td style="text-align: left;">TCP</td>
+<td style="text-align: left;"><strong>Phase 4: Volumetric DDoS Storm:</strong> Multi-million packet SYN flood targeting Apache server.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C26 - C28</strong></td>
+<td style="text-align: left;">$83,104.3\text{s}$ ($23.08\text{h}$)</td>
+<td style="text-align: left;">$84,714.9\text{s}$ ($23.53\text{h}$)</td>
+<td style="text-align: left;">$26.8\text{ min}$</td>
+<td style="text-align: left;">$22,532$</td>
+<td style="text-align: left;">TCP, HTTP, SSHv2, ICMP</td>
+<td style="text-align: left;"><strong>Phase 5: Post-Attack Reconnaissance &amp; Cooldown:</strong> Residual probing and capture termination.</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 3 illustrates the entire 23.5-hour time series of packet arrival rates and bandwidth throughput.</p>
+<p><img alt="Figure 3: Traffic Volume Over Time" src="../../results/figures/fig03_traffic_volume_timeseries.png" /></p>
+<hr />
+<h2>9. Preliminary Concept Drift &amp; Distributional Shift Analysis</h2>
+<p>To evaluate whether this dataset supports adaptive intrusion detection and concept drift research, four operational temporal windows were analyzed:
+- <strong>$W_1$ (Baseline Normal):</strong> $t \in [0\text{s}, 2,715\text{s}]$ ($N = 26,493$)
+- <strong>$W_2$ (Port Scan Reconnaissance):</strong> $t \in [75,200\text{s}, 75,620\text{s}]$ ($N = 423,399$)
+- <strong>$W_3$ (Service Exploitation / Brute-Force):</strong> $t \in [76,980\text{s}, 79,300\text{s}]$ ($N = 53,412$)
+- <strong>$W_4$ (DDoS Flooding Storm):</strong> $t \in [82,290\text{s}, 82,560\text{s}]$ ($N = 3,436,948$)</p>
+<h3>Table 6: Statistical Distribution Drift Results vs. $W_1$ Baseline (<code>results/tables/drift_analysis_results.csv</code>)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Comparison Window</th>
+<th style="text-align: left;">KS Statistic (Length)</th>
+<th style="text-align: left;">KS $p$-value</th>
+<th style="text-align: left;">PSI (Packet Length)</th>
+<th style="text-align: left;">PSI (TTL)</th>
+<th style="text-align: left;">JSD (Protocol)</th>
+<th style="text-align: left;">Statistical Shift Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>$W_2$ (Port Scan)</strong></td>
+<td style="text-align: left;">$0.4990$</td>
+<td style="text-align: left;">$&lt; 10^{-300}$</td>
+<td style="text-align: left;"><strong>$1.8098$</strong></td>
+<td style="text-align: left;">$0.4120$</td>
+<td style="text-align: left;">$0.1502$</td>
+<td style="text-align: left;">Severe Covariate Shift (Reconnaissance)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>$W_3$ (Brute-Force)</strong></td>
+<td style="text-align: left;">$0.2132$</td>
+<td style="text-align: left;">$&lt; 10^{-300}$</td>
+<td style="text-align: left;"><strong>$0.2206$</strong></td>
+<td style="text-align: left;">$0.1845$</td>
+<td style="text-align: left;"><strong>$0.2180$</strong></td>
+<td style="text-align: left;">Catastrophic Multimodal Drift</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>$W_4$ (DDoS Storm)</strong></td>
+<td style="text-align: left;"><strong>$0.5157$</strong></td>
+<td style="text-align: left;">$&lt; 10^{-300}$</td>
+<td style="text-align: left;"><strong>$12.2730$</strong></td>
+<td style="text-align: left;">$0.3951$</td>
+<td style="text-align: left;">$0.1550$</td>
+<td style="text-align: left;">Massive Covariate Shift (Flooding)</td>
+</tr>
+</tbody>
+</table>
+<h3>Formal Distinction Between Covariate Shift and Concept Drift:</h3>
+<ol>
+<li><strong>Covariate Shift ($P(X)$ changes):</strong> The statistical tests provide empirical proof that the input feature distribution $P(X)$ changes dramatically across windows. The Population Stability Index (PSI) reaches $12.27$ for packet length during the DDoS phase, far surpassing the standard threshold of $PSI \ge 0.20$.</li>
+<li><strong>Concept Drift ($P(Y|X)$ changes):</strong> Concept drift occurs when the underlying mapping between input features $X$ and the target class $Y$ shifts over time (e.g., benign traffic adopting attack-like packet sizes, or attack techniques altering their signatures to evade detection). Because the underlying attack tools in this dataset (Nmap, SYN flooding) maintain static, invariant packet structural definitions, the observed shift is <strong>covariate shift and class prevalence shift</strong>, rather than genuine concept drift.</li>
+</ol>
+<p>Figure 11 visualizes the shift in central tendency and PSI across the experimental windows.</p>
+<p><img alt="Figure 11: Feature Drift &amp; Covariate Shift" src="../../results/figures/fig11_temporal_feature_drift.png" /></p>
+<hr />
+<h2>10. Research Suitability Assessment</h2>
+<p>Evaluation for the downstream research project:</p>
+<blockquote>
+<p><strong>Adaptive Cyberattack Detection Using Machine Learning and Concept Drift Detection</strong></p>
+</blockquote>
+<h3>10.1 Dimension-by-Dimension Suitability Audit</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: center;">Evaluation Score</th>
+<th style="text-align: left;">Detailed Scientific Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Dataset Size &amp; Scale</strong></td>
+<td style="text-align: center;"><strong>EXCELLENT</strong></td>
+<td style="text-align: left;">$3.96\text{M}$ packets ($0.95\text{ GB}$ PCAPNG) provides sufficient statistical power for deep packet inspection and streaming data algorithms.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PCAPNG Integrity</strong></td>
+<td style="text-align: center;"><strong>EXCELLENT</strong></td>
+<td style="text-align: left;">Uncorrupted binary packet stream preserves microsecond timestamps, raw payloads, TCP flags, sequence numbers, and Ethernet framing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Volumetric Attack Modeling</strong></td>
+<td style="text-align: center;"><strong>EXCELLENT</strong></td>
+<td style="text-align: left;">The 13,000 PPS SYN flood provides an exceptional real-world benchmark for high-speed anomaly detection, volumetric DDoS defense, and rate-limiting architectures.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Scanning &amp; Reconnaissance</strong></td>
+<td style="text-align: center;"><strong>EXCELLENT</strong></td>
+<td style="text-align: left;">Full 65,535-port Nmap sweeps provide realistic signatures of horizontal and vertical port scanning.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Temporal Continuity</strong></td>
+<td style="text-align: center;"><strong>POOR</strong></td>
+<td style="text-align: left;">A 20.07-hour silent gap separates staging from active attacks. Traffic exists in 28 isolated bursts rather than a continuous operational stream.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ground-Truth Labeling</strong></td>
+<td style="text-align: center;"><strong>LIMITED</strong></td>
+<td style="text-align: left;">No native multiclass attack labels exist. <code>Source_Known</code> and <code>Destination_Known</code> reflect IP subnet topology, not attack categories. Requires heuristic labeling.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Concept Drift Suitability</strong></td>
+<td style="text-align: center;"><strong>LIMITED</strong></td>
+<td style="text-align: left;">Dataset exhibits severe covariate shift ($P(X)$ shift) due to attack burstiness, but does not contain true concept drift ($P(Y|X)$ shift) like evolving malware evasion tactics.</td>
+</tr>
+</tbody>
+</table>
+<h3>10.2 Recommended Machine Learning Methodologies:</h3>
+<ol>
+<li><strong>Unsupervised Anomaly Detection:</strong> Highly suitable. Algorithms such as Isolation Forests, One-Class SVMs, Autoencoders, and Streaming Half-Space Trees can be benchmarked using the pre-attack baseline ($W_1$) as normal background traffic, evaluating detection latency on scanning ($W_2$) and DDoS ($W_4$).</li>
+<li><strong>Supervised Flow Classification:</strong> Requires flow-level aggregation (e.g., using CICFlowMeter or custom Python flow extractors) and programmatic ground-truth labeling using the temporal-IP bounding boxes established in this report.</li>
+<li><strong>Adaptive Streaming &amp; Drift Experiments:</strong> Suitable for evaluating how online classifiers adapt to abrupt covariate shifts (sudden rate spikes and packet size changes), but researchers must explicitly characterize this as <em>attack onset shift</em> rather than <em>concept drift</em>.</li>
+</ol>
+<hr />
+<h2>11. Data Leakage and Dataset Bias Warnings</h2>
+<p>Future machine learning experiments face severe methodological risks if the following biases are not controlled:
+1. <strong>Identifier Leakage via IP Addresses:</strong> If models include <code>Source</code> or <code>Destination</code> IP addresses as features, classifiers will achieve 100% artificial accuracy by simply memorizing that external IPs are DDoS attacks and <code>172.17.0.2</code> is a victim. IP addresses must be stripped or abstracted into categorical topological roles (e.g., subnet depth, internal vs external).
+2. <strong>Temporal Leakage via Random Train/Test Splits:</strong> Standard k-fold cross-validation or random train/test splitting will randomly shuffle packets from the 4.4-minute DDoS storm across both train and test partitions. This constitutes catastrophic data leakage, leading to artificially inflated accuracy (&gt;99.9%) that fails completely in real-world deployment. <strong>Only strict chronological temporal splitting ($Train: t &lt; 75,000\text{s}$, $Test: t \ge 75,000\text{s}$) is methodologically valid.</strong>
+3. <strong>Class Imbalance Distortion:</strong> The 86.73% concentration of DDoS traffic will bias non-cost-sensitive classifiers toward ignoring low-volume attacks (e.g., FTP brute force with 1,786 packets represents 0.045% of the dataset). Evaluation must utilize macro-averaged F1-score, Precision-Recall AUC, and false positive rate at high detection thresholds.</p>
+<hr />
+<h2>12. Complete Visualizations Catalog</h2>
+<p>The structured collection of 14 publication-grade figures is preserved in <code>results/figures/</code>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Figure ID</th>
+<th style="text-align: left;">File Name</th>
+<th style="text-align: left;">Description &amp; Analytical Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Figure 1</strong></td>
+<td style="text-align: left;"><code>fig01_protocol_distribution.png</code></td>
+<td style="text-align: left;">Protocol frequency distribution (log scale) and non-TCP application share.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 2</strong></td>
+<td style="text-align: left;"><code>fig02_packet_length_distribution.png</code></td>
+<td style="text-align: left;">Packet length histogram, KDE, and empirical CDF highlighting the 174 B flood peak.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 3</strong></td>
+<td style="text-align: left;"><code>fig03_traffic_volume_timeseries.png</code></td>
+<td style="text-align: left;">Longitudinal 23.5-hour time series of packet rates (PPS) and bandwidth (Mbps).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 4</strong></td>
+<td style="text-align: left;"><code>fig04_ddos_flood_zoom.png</code></td>
+<td style="text-align: left;">Micro-temporal zoom of the 4.4-minute SYN flood attack ($13,000\text{ PPS}$ plateau).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 5</strong></td>
+<td style="text-align: left;"><code>fig05_top_endpoints_matrix.png</code></td>
+<td style="text-align: left;">Top 12 communication flow channels by transmission volume.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 6</strong></td>
+<td style="text-align: left;"><code>fig06_port_distribution.png</code></td>
+<td style="text-align: left;">Targeted destination port distribution during Nmap reconnaissance sweeps.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 7</strong></td>
+<td style="text-align: left;"><code>fig07_tcp_flag_distribution.png</code></td>
+<td style="text-align: left;">TCP control flag frequencies showing SYN flood and RST/ACK scan responses.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 8</strong></td>
+<td style="text-align: left;"><code>fig08_packet_size_by_protocol_boxplots.png</code></td>
+<td style="text-align: left;">Box plots of packet sizes grouped by protocol on log scale.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 9</strong></td>
+<td style="text-align: left;"><code>fig09_correlation_heatmap.png</code></td>
+<td style="text-align: left;">Pearson linear and Spearman monotonic correlation heatmaps between traffic features.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 10</strong></td>
+<td style="text-align: left;"><code>fig10_outlier_analysis_length_ttl.png</code></td>
+<td style="text-align: left;">Outlier boundaries and heavy-tail characterization for Length and TTL.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 11</strong></td>
+<td style="text-align: left;"><code>fig11_temporal_feature_drift.png</code></td>
+<td style="text-align: left;">Central tendency shift and Population Stability Index (PSI) across operational windows.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 12</strong></td>
+<td style="text-align: left;"><code>fig12_attack_profiles_radar_comparison.png</code></td>
+<td style="text-align: left;">Multi-dimensional radar profile comparing Baseline, Scan, Brute-Force, and DDoS.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 13</strong></td>
+<td style="text-align: left;"><code>fig13_inter_arrival_time_distribution.png</code></td>
+<td style="text-align: left;">Log-scale histogram and density brackets of packet inter-arrival times.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Figure 14</strong></td>
+<td style="text-align: left;"><code>fig14_cumulative_traffic_growth.png</code></td>
+<td style="text-align: left;">Cumulative packet and byte ingestion showing the catastrophic DDoS surge.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>13. Project Repository Structure</h2>
+<p>The complete analytical workspace is structured as follows:</p>
+<pre><code class="language-text">cybersecurity-eda/
+│
+├── data/
+│   └── original/
+│       ├── Cap_1_10VM_1Apache.zip                      # Authoritative Mendeley archive (630 MB)
+│       └── Cap_1_10VM_1Apache/
+│           ├── L1_Cap_10PC_1S.pcapng                   # Raw PCAPNG packet capture (947 MB, 3.96M pkts)
+│           ├── L1_Cap_202209051617.csv                 # Complete CSV dataset (539 MB, 3.96M rows)
+│           ├── L1_Cap_202209051620.sql                 # MySQL database dump (618 MB)
+│           ├── L1_Cap_10PC_1S_dissec_complete.csv      # Complete Wireshark CSV export (562 MB)
+│           ├── L1_Cap_10PC_1S_dissec.csv               # 1M-row truncated CSV (144 MB)
+│           ├── L1_Cap_10PC_1S_dissec.xlsx              # Excel workbook (67 MB)
+│           └── Dataset_J4_How_to_Install.pdf           # Official architecture documentation (481 KB)
+│
+├── notebooks/
+│   └── cybersecurity_eda.ipynb                         # Fully executed, reproducible Jupyter Notebook
+│
+├── src/
+│   ├── extract_pcap.py                                 # PCAPNG dissection &amp; concordance engine
+│   ├── analyze_sql.py                                  # SQL parser &amp; relational SQLite database builder
+│   ├── data_quality.py                                 # 11-dimension data quality audit pipeline
+│   ├── statistical_analysis.py                         # Statistical moments, quartiles, and IQR profiler
+│   ├── network_analysis.py                             # Cybersecurity attack scenario and traffic matrix analyzer
+│   ├── temporal_analysis.py                            # Time series, rate metrics, and burst dynamics
+│   ├── drift_analysis.py                               # Operational window drift, KS test, and PSI calculator
+│   ├── visualization.py                                # Publication-grade visualization generator
+│   └── generate_notebook.py                            # Programmatic notebook constructor
+│
+├── results/
+│   ├── figures/                                        # 14 publication-grade PNG figures (300 DPI)
+│   ├── tables/
+│   │   ├── data_quality_report.csv                     # Feature-by-feature quality metrics table
+│   │   ├── descriptive_statistics.csv                  # Numerical moments, quartiles, skewness, kurtosis
+│   │   ├── protocol_distribution.csv                   # 12-protocol frequency census
+│   │   ├── binary_flags_summary.csv                    # Source/Destination Known distributions
+│   │   ├── endpoint_traffic_matrix.csv                 # Top communicating IP pairs
+│   │   ├── attack_scenarios_summary.csv                # Validated attack matrix and rates
+│   │   ├── temporal_traffic_timeseries_10s.csv         # 10-second binned PPS and Mbps time series
+│   │   ├── traffic_clusters_breakdown.csv              # 28 segmented traffic sessions
+│   │   ├── drift_analysis_results.csv                  # KS-test, PSI, and JSD statistical distances
+│   │   └── window_feature_comparisons.csv              # Windowed feature profiles
+│   ├── extracted_data/
+│   │   ├── pcdataset.sqlite                            # Indexed SQLite relational database (754 MB)
+│   │   ├── pcap_forensic_sample_5k.csv                 # 5,000-frame decoded forensic sample
+│   │   ├── pcap_metadata.json                          # PCAPNG metadata and alignment metrics
+│   │   └── sql_analysis_summary.json                   # SQL DDL and query performance summary
+│   └── reports/
+│       └── EDA_REPORT.md                               # This authoritative research document
+│
+├── requirements.txt                                    # Python dependencies manifest
+└── README.md                                           # Repository overview and reproduction guide
+</code></pre>
+<hr />
+<h2>14. References</h2>
+<ol>
+<li>Shandilya, S. K., Ganguli, C., Izonin, I., &amp; Nagar, A. (2022). <em>Cyber Attack Evaluation Dataset for Deep Packet Inspection and Analysis</em>. Mendeley Data, V1. https://doi.org/10.17632/3szjvt3w78.1</li>
+<li>Sommer, R., &amp; Paxson, V. (2010). Outside the closed world: On using machine learning for network intrusion detection. <em>IEEE Symposium on Security and Privacy</em>, 305–316.</li>
+<li>Arp, D., Quiring, E., Pendlebury, F., Warnecke, A., Pierazzi, F., Dos Santos, R., Cavallaro, L., &amp; Rieck, K. (2022). Dos and don'ts of machine learning in computer security. <em>USENIX Security Symposium</em>, 3971–3988.</li>
+<li>Gama, J., Žliobaitė, I., Bifet, A., Pechenizkiy, M., &amp; Bouchachia, A. (2014). A survey on concept drift adaptation. <em>ACM Computing Surveys (CSUR)</em>, 46(4), 1–37.</li>
+<li>Yavanoglu, U., &amp; Aydos, M. (2017). A review on cyber security datasets for machine learning. <em>IEEE International Conference on Big Data</em>, 3393–3402.</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Protocol,Frequency,Percentage,Classification
+TCP,3953715,99.77115,Dominant (Transport)
+FTP,3792,0.09569,Application/Control
+SSHv2,3032,0.07651,Application/Control
+HTTP,1090,0.02751,Application/Control
+ARP,784,0.01978,Application/Control
+ICMP,200,0.00505,Application/Control
+DNS,149,0.00376,Application/Control
+FTP-DATA,6,0.00015,Rare Protocol
+UDP,6,0.00015,Rare Protocol
+ICMPv6,5,0.00013,Rare Protocol
+SSHv1,4,0.0001,Rare Protocol
+SSH,1,3e-05,Rare Protocol

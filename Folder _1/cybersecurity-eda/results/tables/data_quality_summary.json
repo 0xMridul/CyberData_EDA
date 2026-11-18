@@ -1,0 +1,32 @@
+{
+  "total_records_audited": 3962784,
+  "audit_duration_seconds": 7.82,
+  "exact_missing_ttl_count": 789,
+  "missing_ttl_percentage": 0.0199,
+  "missing_ttl_explanation": "All 789 missing TTL entries correspond to Layer 2 ARP frames which do not carry an IP header, representing expected protocol domain behavior rather than data corruption.",
+  "infinite_values_detected": 0,
+  "invalid_ttl_out_of_range": 4,
+  "invalid_length_out_of_range": 0,
+  "unique_protocols_detected": 12,
+  "protocol_list": [
+    "ARP",
+    "DNS",
+    "FTP",
+    "FTP-DATA",
+    "HTTP",
+    "ICMP",
+    "ICMPv6",
+    "SSH",
+    "SSHv1",
+    "SSHv2",
+    "TCP",
+    "UDP"
+  ],
+  "duplicate_frame_indices": 0,
+  "constant_columns": [],
+  "near_constant_columns": [
+    "Destination_Known (98.89% True)",
+    "Protocol (99.77% TCP)"
+  ],
+  "whitespace_issues_in_info": 383
+}

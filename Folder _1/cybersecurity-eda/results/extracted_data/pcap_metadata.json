@@ -1,0 +1,12 @@
+{
+  "file_path": "/Users/s3nt1/Downloads/test/cybersecurity-eda/data/original/Cap_1_10VM_1Apache/L1_Cap_10PC_1S.pcapng",
+  "file_name": "L1_Cap_10PC_1S.pcapng",
+  "file_size_bytes": 992811744,
+  "file_size_mb": 946.82,
+  "alignment": {
+    "frames_verified": 25000,
+    "mismatches": 0,
+    "concordance_rate": 1.0,
+    "elapsed_seconds": 0.243
+  }
+}

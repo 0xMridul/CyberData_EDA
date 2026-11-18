@@ -1,0 +1,11 @@
+Feature,Total_Records,Missing_Count,Missing_Percentage,Infinite_Count,Zero_Count,Zero_Percentage,Whitespace_Anomalies,Data_Type
+No.,3962784,0,0.0,0,0,0.0,0,int64
+Time,3962784,0,0.0,0,1,0.0,0,float64
+Source,3962784,0,0.0,0,0,0.0,0,str
+Destination,3962784,0,0.0,0,0,0.0,0,str
+Protocol,3962784,0,0.0,0,0,0.0,0,str
+Length,3962784,0,0.0,0,0,0.0,0,int64
+Time to Live,3962784,789,0.0199,0,0,0.0,0,int64
+Info,3962784,0,0.0,0,0,0.0,383,str
+Source_Known,3962784,0,0.0,0,3486372,87.9778,0,int64
+Destination_Known,3962784,0,0.0,0,43928,1.1085,0,int64

@@ -1,0 +1,14 @@
+{
+  "bin_size_seconds": 10,
+  "total_timeline_seconds": 84720,
+  "total_timeline_hours": 23.53,
+  "total_packets": 3962784,
+  "total_bins": 8473,
+  "active_bins": 323,
+  "idle_bins": 8150,
+  "active_ratio_percentage": 3.81,
+  "max_pps": 71343.8,
+  "mean_active_pps": 1226.9,
+  "max_mbps": 94.71,
+  "processing_seconds": 1.81
+}

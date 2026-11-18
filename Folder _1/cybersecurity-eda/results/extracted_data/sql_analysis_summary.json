@@ -1,0 +1,64 @@
+{
+  "dump_inspection": {
+    "file_path": "/Users/s3nt1/Downloads/test/cybersecurity-eda/data/original/Cap_1_10VM_1Apache/L1_Cap_202209051620.sql",
+    "file_name": "L1_Cap_202209051620.sql",
+    "file_size_bytes": 648049142,
+    "file_size_mb": 618.03,
+    "target_table": "pcdataset.L1_Cap",
+    "columns": [
+      "No.",
+      "Time",
+      "Source",
+      "Destination",
+      "Protocol",
+      "Length",
+      "Time to Live",
+      "Info",
+      "Source_Known",
+      "Destination_Known"
+    ],
+    "column_count": 10,
+    "sample_insert_row": null,
+    "ddl_present_in_dump": false,
+    "documented_schema": {
+      "No.": "INT",
+      "Time": "DECIMAL/FLOAT",
+      "Source": "VARCHAR(50)",
+      "Destination": "VARCHAR(50)",
+      "Protocol": "VARCHAR(50)",
+      "Length": "INT",
+      "Time to Live": "INT",
+      "Info": "VARCHAR(1024)",
+      "Source_Known": "INT",
+      "Destination_Known": "INT"
+    }
+  },
+  "sqlite_verification": {
+    "sqlite_path": "/Users/s3nt1/Downloads/test/cybersecurity-eda/results/extracted_data/pcdataset.sqlite",
+    "total_records": 3962784,
+    "database_size_mb": 754.15,
+    "build_time_seconds": 11.3,
+    "top_protocols": [
+      [
+        "TCP",
+        3953715
+      ],
+      [
+        "FTP",
+        3792
+      ],
+      [
+        "SSHv2",
+        3032
+      ],
+      [
+        "HTTP",
+        1090
+      ],
+      [
+        "ARP",
+        784
+      ]
+    ]
+  }
+}

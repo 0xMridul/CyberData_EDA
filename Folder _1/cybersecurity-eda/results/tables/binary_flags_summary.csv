@@ -1,0 +1,5 @@
+Feature,Value,Count,Percentage,Interpretation
+Source_Known,1,476412,12.0222,Known Internal Subnet (10+1 Machines)
+Source_Known,0,3486372,87.9778,Spoofed / External Source
+Destination_Known,1,3918856,98.8915,Internal Target (predominantly Apache Server)
+Destination_Known,0,43928,1.1085,External Destination / Broadcast

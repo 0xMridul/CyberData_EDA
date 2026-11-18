@@ -1,0 +1,7 @@
+Attack_Category,Observed_Packets,Target,Time_Window,Attack_Rate_PPS,Characteristics
+Distributed Denial of Service (DDoS),3436938,172.17.0.2:80 (Apache Server on VLAN2),82292.89s - 82556.68s (Duration: 263.80s / 4.40 min),13028.8,SYN flood with randomized IPv4 spoofed source IPs; uniform 174-byte packet length; overwhelming volume.
+Network Port Scanning (Nmap Sweep),414321,"VLAN1 Hosts (172.18.0.3, 172.18.0.6, 172.18.0.2)","Clusters 14, 15, 17 (75210s - 75618s)",2263.2,"Exhaustive 65,535-port sweep (nmap -p-); rapid SYN sequence followed by RST,ACK responses from closed ports."
+FTP Service Password Brute-Force,1786,172.18.0.6:21 (vsftpd FTP Service),76980s - 79300s (Clusters 20-23),Automated sequential dictionary attack,Iterative USER/PASS credential trials (77 unique trials). Server responses: 530 Login incorrect.
+SSH Reconnaissance (Nmap NSE Probing),8,VLAN1 Hosts (Port 22),Cluster 17 and Clusters 20-22,Service banner grab and hostkey discovery,"Explicit Nmap client banners: SSH-1.5-NmapNSE_1.0, SSH-1.5-Nmap-SSH1-Hostkey, SSH-2.0-Nmap-SSH2-Hostkey."
+Package Download & Supply-Chain Staging,361,"External Mirrors (ports.ubuntu.com: 185.125.190.36, 185.125.190.39)",Early capture (0s - 2714s) and mid-experiment,HTTP GET requests for system binaries,"Automated apt/dpkg retrieval of libcap2-bin, iputils-ping, libsqlite3, libexpat1."
+ARP Network Discovery & Resolution,784,VLAN1 Broadcast & Router1 (172.18.0.1),Interspersed across capture lifecycle,Layer 2 address mapping,Who-has inquiries and is-at announcements maintaining container ARP cache tables.

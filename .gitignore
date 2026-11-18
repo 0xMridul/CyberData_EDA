@@ -1,0 +1,19 @@
+
+# Original cybersecurity datasets
+Folder _1/cybersecurity-eda/data/original/
+
+# Large extracted databases
+Folder _1/cybersecurity-eda/results/extracted_data/*.sqlite
+
+# Large packet captures and archives
+*.pcap
+*.pcapng
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
